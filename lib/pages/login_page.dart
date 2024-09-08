@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
 class LoginField extends StatelessWidget {
   const LoginField({super.key});
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -49,16 +49,15 @@ class LoginField extends StatelessWidget {
         const SizedBox(height: 30),
         FilledButton(
           onPressed: () {
-            print('Logado');
+            Navigator.pushNamed(context, '/main');
           },
           style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(const Color.fromARGB(255, 248, 132, 181)),
-            fixedSize: WidgetStateProperty.all(const Size(150, 30))
-
-          ),
+              backgroundColor: WidgetStateProperty.all(
+                  const Color.fromARGB(255, 248, 132, 181)),
+              fixedSize: WidgetStateProperty.all(const Size(150, 30))),
           child: const Text('Login'),
-        
-    )],
+        )
+      ],
     );
   }
 }

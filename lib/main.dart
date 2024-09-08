@@ -1,4 +1,5 @@
 import 'package:calendario_vacinacao/pages/login_page.dart';
+import 'package:calendario_vacinacao/pages/main_page.dart';
 import 'package:calendario_vacinacao/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const WelcomePage(),
         '/login': (context) => const LoginPage(),
         // '/signup': (context) => const SignUpPage(),
-        // '/vaccine': (context) => const VaccinePage()
+        '/main': (context) => const MainPage()
       },
     );
   }
