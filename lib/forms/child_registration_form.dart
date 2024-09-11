@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ChildRegistrationForm extends StatefulWidget {
-  const ChildRegistrationForm({super.key});
+  final Function(Child) registerChild;
+  const ChildRegistrationForm({super.key, required this.registerChild});
 
   @override
   State<StatefulWidget> createState() => _ChildRegistrationFormState();
@@ -118,6 +119,7 @@ class _ChildRegistrationFormState extends State<ChildRegistrationForm> {
                     gender: gender,
                     birthDate: birthDate,
                     vaccines: []);
+                widget.registerChild(child);
               }
             },
             child: const Text('Salvar'),
