@@ -114,6 +114,18 @@ class _ChildRegistrationFormState extends State<ChildRegistrationForm> {
                   ),
                 );
               } else {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Dados salvos com sucesso'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
                 final child = Child(
                     name: name,
                     gender: gender,

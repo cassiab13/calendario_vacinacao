@@ -55,7 +55,7 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
         children: [
           ChildRegistrationForm(registerChild: _addChild),
           RegisteredChildPage(registeredChild: _registeredChild),
-          const VaccinePage()
+          VaccinePage(registeredChild: _registeredChild)
                 ],
       ),
     );

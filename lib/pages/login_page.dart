@@ -1,3 +1,4 @@
+import 'package:calendario_vacinacao/components/background.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,16 +8,23 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
-        backgroundColor: const Color.fromARGB(255, 241, 92, 122),
-      ),
-      backgroundColor: const Color.fromARGB(255, 241, 198, 207),
-      body: const Center(
-        child: LoginField(),
+        title: const Text('Login')
+        ),
+      body:const BackgroundDecoration(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: 
+            [
+              LoginField(),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
 
 class LoginField extends StatelessWidget {
   const LoginField({super.key});
@@ -31,6 +39,8 @@ class LoginField extends StatelessWidget {
           width: 250,
           child: TextField(
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white54,
               border: OutlineInputBorder(),
               labelText: 'Nome do usuário',
             ),
@@ -41,6 +51,8 @@ class LoginField extends StatelessWidget {
           width: 250,
           child: TextField(
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white54,
               border: OutlineInputBorder(),
               labelText: 'Senha',
             ),
@@ -53,9 +65,14 @@ class LoginField extends StatelessWidget {
           },
           style: ButtonStyle(
               backgroundColor: WidgetStateProperty.all(
-                  const Color.fromARGB(255, 248, 132, 181)),
-              fixedSize: WidgetStateProperty.all(const Size(150, 30))),
-          child: const Text('Login'),
+                 const Color.fromARGB(255, 240, 177, 203)),
+              fixedSize: WidgetStateProperty.all(const Size(150, 30)),
+              ),
+          child: const Text(
+            style: TextStyle(
+              color: Colors.black,
+              ),
+            'Login'),
         )
       ],
     );

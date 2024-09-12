@@ -18,15 +18,6 @@ class WelcomePage extends StatelessWidget {
           children: <Widget>[
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 40.0),
-              child: Text(
-                'Calendário de Vacinação',
-                style: TextStyle(
-                  fontSize: 46.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 241, 92, 122)
-                ),
-                textAlign: TextAlign.center,
-              ),
             ),
             Expanded(
               child: Center(

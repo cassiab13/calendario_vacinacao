@@ -1,13 +1,18 @@
+import 'package:calendario_vacinacao/models/child.dart';
 import 'package:flutter/material.dart';
 
 class VaccinePage extends StatefulWidget {
-  const VaccinePage({super.key});
+  final List<Child> registeredChild;
+
+  const VaccinePage({super.key, required this.registeredChild});
 
   @override
   State<StatefulWidget> createState() => _VaccinePageState();
 }
 
 class _VaccinePageState extends State<VaccinePage> {
+  Child? _selectedChild;
+
   bool isChecked = true;
 
   @override
