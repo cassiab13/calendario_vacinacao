@@ -4,7 +4,6 @@ import 'package:calendario_vacinacao/pages/registered_child_page.dart';
 import 'package:calendario_vacinacao/pages/vaccine_page.dart';
 import 'package:flutter/material.dart';
 
-
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
   @override
@@ -15,7 +14,7 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
   late final TabController _tabController;
   final List<Child> _registeredChild = [];
 
-  void _addChild(Child child){
+  void _addChild(Child child) {
     setState(() {
       _registeredChild.add(child);
     });
@@ -41,14 +40,11 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
         bottom: TabBar(
           controller: _tabController,
           tabs: const <Widget>[
-            Tab(icon: Icon(Icons.add),
-            text: 'Registrar criança'),
-            Tab(icon: Icon(Icons.list),
-            text: 'Crianças registradas'),
-            Tab(icon: Icon(Icons.vaccines),
-            text: 'Consultar vacinas'),
+            Tab(icon: Icon(Icons.add), text: 'Registrar criança'),
+            Tab(icon: Icon(Icons.list), text: 'Crianças registradas'),
+            Tab(icon: Icon(Icons.vaccines), text: 'Consultar vacinas'),
           ],
-        ),      
+        ),
       ),
       body: TabBarView(
         controller: _tabController,
@@ -56,9 +52,8 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
           ChildRegistrationForm(registerChild: _addChild),
           RegisteredChildPage(registeredChild: _registeredChild),
           VaccinePage(registeredChild: _registeredChild)
-                ],
+        ],
       ),
     );
   }
 }
-

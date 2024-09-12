@@ -1,5 +1,5 @@
 class Vaccine {
-  final String? name;
+  final String name;
   final int months;
   final String? description;
   final int dose;

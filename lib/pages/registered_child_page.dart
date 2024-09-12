@@ -8,10 +8,11 @@ class RegisteredChildPage extends StatelessWidget {
 
   const RegisteredChildPage({super.key, required this.registeredChild});
 
-  void _navigateToVaccinePage(BuildContext context, Child child){
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => VaccinePage(registeredChild: [child]))
-    );
+  void _navigateToVaccinePage(
+      BuildContext context, Child child) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) =>
+            VaccinePage(registeredChild: [child])));
   }
 
   @override
@@ -26,11 +27,13 @@ class RegisteredChildPage extends StatelessWidget {
                 title: Text(
                   child.name,
                   style: const TextStyle(fontSize: 24),
-                  ),
-                subtitle:
-                    Text('Sexo: ${child.gender} | Data de nascimento: ${DateFormat('dd/MM/yyyy').format(child.birthDate)}'),
+                ),
+                subtitle: Text(
+                    'Sexo: ${child.gender} | Data de nascimento: ${DateFormat('dd/MM/yyyy').format(child.birthDate)}'),
                 trailing: IconButton(
-                  icon:  const Icon(Icons.child_friendly), onPressed: () => _navigateToVaccinePage(context, child),
+                  icon: const Icon(Icons.child_friendly),
+                  onPressed: () =>
+                      _navigateToVaccinePage(context, child),
                 ),
               );
             });
