@@ -1,4 +1,3 @@
-import 'package:calendario_vacinacao/components/background.dart';
 import 'package:calendario_vacinacao/components/checkbox.dart';
 import 'package:calendario_vacinacao/models/child.dart';
 import 'package:calendario_vacinacao/models/vaccine.dart';
@@ -14,7 +13,7 @@ class VaccinePage extends StatefulWidget {
 }
 
 class _VaccinePageState extends State<VaccinePage> {
-  Child? _selectedChild;
+  late Child _selectedChild;
 
   @override
   void initState() {
@@ -24,16 +23,39 @@ class _VaccinePageState extends State<VaccinePage> {
     }
   }
 
-  bool isChecked = true;
+  void _onChildSelected(Child? child) {
+    if (child != null) {
+      setState(() {
+        _selectedChild = child;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return widget.registeredChild.isEmpty
+        ? const Center(child: Text("Não há crianças registradas"))
+        : Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            const SizedBox(
+              child: Text('Selecione a criança: ')
+            ),
+            DropdownButton<Child>(
+            value: _selectedChild,
+            onChanged: _onChildSelected,
+            items: widget.registeredChild.map<DropdownMenuItem<Child>>(
+              (Child child) {
+                return DropdownMenuItem<Child>(
+                  value: child,
+                  child: Text(child.name),
+                );
+              },
+            ).toList(),
+          ),
+          Expanded(
               child: ListView.builder(
                   itemCount: vaccines.length,
                   itemBuilder: (context, index) {

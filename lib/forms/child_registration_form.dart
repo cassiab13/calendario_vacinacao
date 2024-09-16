@@ -58,6 +58,8 @@ class _ChildRegistrationFormState extends State<ChildRegistrationForm> {
           TextField(
             controller: _nameController,
             decoration: const InputDecoration(
+              filled: true,
+              fillColor: Colors.white54,
               border: OutlineInputBorder(),
               labelText: 'Digite o nome da criança',
             ),
@@ -67,6 +69,8 @@ class _ChildRegistrationFormState extends State<ChildRegistrationForm> {
             controller: _birthController,
             readOnly: true,
             decoration: const InputDecoration(
+              filled: true,
+              fillColor: Colors.white54,
               border: OutlineInputBorder(),
               labelText: 'Data de nascimento',
               suffixIcon: Icon(Icons.calendar_today),
@@ -76,6 +80,8 @@ class _ChildRegistrationFormState extends State<ChildRegistrationForm> {
           const SizedBox(height: 16),
           DropdownButtonFormField<String>(
             decoration: const InputDecoration(
+              filled: true,
+              fillColor: Colors.white54,
               labelText: 'Sexo',
               border: OutlineInputBorder(),
             ),

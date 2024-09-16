@@ -1,3 +1,4 @@
+import 'package:calendario_vacinacao/components/background.dart';
 import 'package:calendario_vacinacao/forms/child_registration_form.dart';
 import 'package:calendario_vacinacao/models/child.dart';
 import 'package:calendario_vacinacao/pages/registered_child_page.dart';
@@ -35,25 +36,27 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Calendário de vacinação'),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const <Widget>[
-            Tab(icon: Icon(Icons.add), text: 'Registrar criança'),
-            Tab(icon: Icon(Icons.list), text: 'Crianças registradas'),
-            Tab(icon: Icon(Icons.vaccines), text: 'Consultar vacinas'),
-          ],
+        appBar: AppBar(
+          title: const Text('Calendário de vacinação'),
+          bottom: TabBar(
+            controller: _tabController,
+            tabs: const <Widget>[
+              Tab(icon: Icon(Icons.add), text: 'Registrar criança'),
+              Tab(icon: Icon(Icons.list), text: 'Crianças registradas'),
+              Tab(icon: Icon(Icons.vaccines), text: 'Consultar vacinas'),
+            ],
+          ),
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          ChildRegistrationForm(registerChild: _addChild),
-          RegisteredChildPage(registeredChild: _registeredChild),
-          VaccinePage(registeredChild: _registeredChild)
-        ],
-      ),
-    );
+        body: BackgroundDecoration(
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              ChildRegistrationForm(registerChild: _addChild),
+              RegisteredChildPage(registeredChild: _registeredChild),
+              VaccinePage(registeredChild: _registeredChild)
+            ],
+          ),
+        )
+        );
   }
 }

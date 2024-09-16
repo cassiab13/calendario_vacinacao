@@ -24,17 +24,19 @@ class RegisteredChildPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final child = registeredChild[index];
               return ListTile(
-                title: Text(
+                title: Container(
+                  color: Colors.white54,
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
                   child.name,
-                  style: const TextStyle(fontSize: 24),
-                ),
-                subtitle: Text(
-                    'Sexo: ${child.gender} | Data de nascimento: ${DateFormat('dd/MM/yyyy').format(child.birthDate)}'),
-                trailing: IconButton(
-                  icon: const Icon(Icons.child_friendly),
-                  onPressed: () =>
-                      _navigateToVaccinePage(context, child),
-                ),
+                  style: const TextStyle(
+                    fontSize: 24  )
+                )),
+                subtitle: Container(
+                color: Colors.white.withOpacity(0.5), 
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                    'Sexo: ${child.gender} | Data de nascimento: ${DateFormat('dd/MM/yyyy').format(child.birthDate)}')),
               );
             });
   }
