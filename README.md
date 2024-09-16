@@ -1,16 +1,28 @@
-# calendario_vacinacao
+# Controle de Vacinas
+Projeto que está sendo desenvolvido para a matéria de Programação para dispositivos móveis ministrada no 6º semestre do Curso de Engenharia de Software da Unicesumar. Este aplicativo que está sendo desenvolvido em Flutter tem como objetivo auxiliar o acompanhamento das vacinas admnistradas a crianças, permitindo um controle mais organizado.
 
-A new Flutter project.
+## Objetivo
+O objetivo principal do projeto é criar um aplicativo que permita aos usuários registrar e monitorar as vacinas já administradas, além de oferecer um controle atualizado sobre vacinas futuras e pendentes.
 
-## Getting Started
+## Funcionalidades
+Registro das vacinas: permite marcar a vacina como já administrada, além de informações adicionais sobre reações, número do lote e outras informações relevantes.
+Histórico: visualize as vacinas já tomadas e quais são as próximas vacinas previstas.
+Registro das crianças: o aplicativo permite fazer o registro das crianças, armazenando informações sobre nome, data de nascimento e gênero.
 
-This project is a starting point for a Flutter application.
+## Tecnologias utilizadas
+Flutter e Dart.
 
-A few resources to get you started if this is your first Flutter project:
+## Como iniciar o aplicativo
+### Pré-requisitos:
+- Flutter SDK
+- Editor de código: preferencialmente Visual Studio Code ou Android Studio
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Clonar repositório:
+- git clone https://github.com/cassiab13/calendario_vacinacao.git
+- cd calendario_vacinacao
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Instalar dependências
+flutter pub get
+
+### Executar aplicativo
+flutter run
