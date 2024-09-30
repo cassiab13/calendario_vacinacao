@@ -1,3 +1,4 @@
+import 'package:calendario_vacinacao/components/background.dart';
 import 'package:calendario_vacinacao/components/checkbox.dart';
 import 'package:calendario_vacinacao/models/child.dart';
 import 'package:calendario_vacinacao/models/vaccine.dart';
@@ -33,8 +34,13 @@ class _VaccinePageState extends State<VaccinePage> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.registeredChild.isEmpty
-        ? const Center(child: Text("Não há crianças registradas"))
+    return BackgroundDecoration(child: 
+    widget.registeredChild.isEmpty
+        ? const Center(child: Text(
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 24),
+          "Não há crianças registradas"))
         : Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -91,6 +97,7 @@ class _VaccinePageState extends State<VaccinePage> {
                   }),
             )
           ],
-        ));
+        ))
+    );
   }
 }

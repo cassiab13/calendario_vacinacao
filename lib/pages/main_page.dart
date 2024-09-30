@@ -35,28 +35,28 @@ class _TabBarState extends State<MainPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Calendário de vacinação'),
-          bottom: TabBar(
-            controller: _tabController,
-            tabs: const <Widget>[
-              Tab(icon: Icon(Icons.add), text: 'Registrar criança'),
-              Tab(icon: Icon(Icons.list), text: 'Crianças registradas'),
-              Tab(icon: Icon(Icons.vaccines), text: 'Consultar vacinas'),
-            ],
-          ),
+    return BackgroundDecoration(
+      child: Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 153, 193, 227),
+        title: const Text('Calendário de vacinação'),
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: const <Widget>[
+            Tab(icon: Icon(Icons.add), text: 'Registrar criança'),
+            Tab(icon: Icon(Icons.list), text: 'Crianças registradas'),
+            Tab(icon: Icon(Icons.vaccines), text: 'Consultar vacinas'),
+          ],
         ),
-        body: BackgroundDecoration(
-          child: TabBarView(
-            controller: _tabController,
-            children: [
-              ChildRegistrationForm(registerChild: _addChild),
-              RegisteredChildPage(registeredChild: _registeredChild),
-              VaccinePage(registeredChild: _registeredChild)
-            ],
-          ),
-        )
-        );
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          ChildRegistrationForm(registerChild: _addChild),
+          RegisteredChildPage(registeredChild: _registeredChild),
+          VaccinePage(registeredChild: _registeredChild),
+        ],
+      ),
+)    );
   }
 }

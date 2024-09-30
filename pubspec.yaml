@@ -62,11 +62,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/assets/background_welcome_page.jpg
-    - lib/assets/background_image.jpeg
-    - lib/assets/login_background.jpeg
-    - lib/assets/registration_background.jpeg
-
+    - lib/assets/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

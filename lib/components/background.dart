@@ -10,7 +10,7 @@ class BackgroundDecoration extends StatelessWidget {
     return Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("lib/assets/login_background.jpeg"),
+            image: AssetImage("lib/assets/background_novo.png"),
             fit: BoxFit.cover,
           ),
         ),
